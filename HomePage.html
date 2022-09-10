@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/CSS/confgButtons&Geral.css">
+    <link rel="stylesheet" href="./src/CSS/home.css">
+    <link rel="stylesheet" href="./src/CSS/modalHomePage.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <title>Document</title>
+</head>
+<body class="preload" id="body">
+    <header>
+        <nav>
+            <h1>Empresas e Departamentos</h1>
+            <div class="hideOnMobile" id="buttonsHeaderLogin">
+                <button class="buttonOpenModalCadastrar">Cadastro</button>
+                <button class="buttonOpenModalLogin">Login</button>
+            </div>
+            <button id="showSideBar">Departamentos</button>
+        </nav>
+    </header>
+    <main>
+        <section class="list-companies">
+            <ul id="listCompanies">
+                
+            </ul>
+        </section>
+    </main>
+    <aside class="filterDepartaments" id="sideBar">
+        <div id="close-menu-button">
+            <button id="closeButton">X</button>
+        </div>
+        <ul id="sectorsList">
+            <li id="all">Todos</li>
+        </ul>
+        <div class="login-cad-button-mobile">
+            <button class="buttonOpenModalCadastrar">Cadastro</button>
+            <button class="buttonOpenModalLogin">Login</button>
+        </div>
+    </aside>
+    <section class="modal-background" id="modalCadastro">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 class="cadastroOnly">Bem vindo, favor efetuar cadastro</h2>
+                <button id="closeModalCadastro">X</button>
+            </div>
+            <form action="">
+                <input class="cadastro_login cadastro" type="text" placeholder="Digite seu email" id="2">
+                <input class="cadastroOnly cadastro" type="text" placeholder="Digite seu username" id="4">
+                <input class="cadastroOnly cadastro" type="text" placeholder="Informe seu nivel profissional" id="3">
+                <input class="cadastro"type="text" placeholder="Digite sua senha" id="1">
+                <input class="cadastro cadastroOnly" type="text" placeholder="Confirme sua senha" id="confimation">
+                <button type="submit" id="cadastrar">Cadastrar</button>
+            </form>
+            <div class="modal-footer">
+                <a href="" class="cadastroOnly">Já possuo cadastro</a>
+            </div>
+        </div>
+    </section>
+    <section class="modal-background" id="modalLogin">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 class="loginOnly">Bem vindo, favor efetuar login</h2>
+                <button id="closeModalLogin">X</button>
+            </div>
+            <form action="">
+                <input class="login" type="text" placeholder="Digite seu email" id="2">
+                <input class="login"type="text" placeholder="Digite sua senha" id="1">
+                <button type="submit" id="logar">Logar</button>
+            </form>
+            <div class="modal-footer">
+                <a href="" class="loginOnly">Ainda não sou cadastrado</a>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./src/JS/eventListenersHome.js"></script>
+    <script type="module" src="./src/JS/login_cad.js"></script>
+    <script type="module" src="./src/JS/homePage.js"></script>
+</body>
+</html>
