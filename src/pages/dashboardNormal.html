@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/confgButtons&Geral.css">
+    <link rel="stylesheet" href="../CSS/home.css">
+    <link rel="stylesheet" href="../CSS/modalHomePage.css">
+    <link rel="stylesheet" href="../CSS/dashboardNormal.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <title>dashboard normal user</title>
+</head>
+<body class="preload" id="body">
+    <header>
+        <nav>
+            <h1>Empresas e Departamentos</h1>
+            <button id="showSideBar">Menu</button>
+        </nav>
+    </header>
+
+
+    <main>
+        <section class="list-companies">
+            <ul id="company">
+                
+            </ul>
+        </section>
+    </main>
+
+    
+    <aside id="sideBar">
+        <div id="close-menu-button">
+            <button id="closeButton">X</button>
+        </div>
+        <ul id="menu">
+            <li id="listWorkers">Funcionários</li>
+            <li id="listDepartments">Departamentos</li>
+            <li id="editInfo">Editar informações</li>
+        </ul>
+        <button id="logout">Sair</button>
+    </aside>
+
+
+    <section class="modal-background" id="modalAttInfo">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 class="cadastroOnly">Olá, por favor informe os novos dados</h2>
+                <button id="closeModal">X</button>
+            </div>
+            <form action="">
+                <input class="cadastro" type="text" placeholder="Digite seu novo email" id="2">
+                <input class="cadastro" type="text" placeholder="Digite seu novo username" id="4">
+                <input class="cadastro"type="text" placeholder="Digite sua nova senha" id="1">
+                <input class="cadastro" type="text" placeholder="Confirme sua nova senha" id="confimation">
+                <button type="submit" id="buttonAttInfo">Atualizar</button>
+            </form>
+        </div>
+    </section>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="module" src="../JS/dashboardNormal.js"></script>
+    <script type="module" src="../JS/eventListenersDashboard.js"></script>
+</body>
+</html>

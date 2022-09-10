@@ -1,0 +1,24 @@
+#editInfoHeader{
+    position: relative;
+    right: 55%;
+}
+
+.company{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#description{
+    display: flex;
+    justify-content: center;
+}
+
+#titleCompanyWorkers{
+    background-color: var(--header-color);
+    color: var(--title-color);
+}
+
+#menu li{
+    font-size: 20px;
+}
