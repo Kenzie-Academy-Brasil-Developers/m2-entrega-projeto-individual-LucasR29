@@ -10,7 +10,7 @@ const showSideBar = document.getElementById('showSideBar')
 
 logout.addEventListener('click', (event) => {
     localStorage.clear()
-    window.location.replace('../../HomePage.html')
+    window.location.replace('../../index.html')
 })
 
 openModaledit.addEventListener('click', (event) => {

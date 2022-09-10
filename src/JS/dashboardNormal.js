@@ -86,18 +86,3 @@ function renderCompanyWorkers(worker, department){
 }
 
 renderCompanyWorkers(workers, departments)
-
-async function editInfo(){
-    const data = document.querySelectorAll('.cadastro')
-
-    if(data[3].value == data[2].value){
-        const obj = {
-            username: data[1].value,
-            email:data[0].value,
-            password: data[2].value
-        }
-        await Api.patchUser(obj)
-    }else{
-        Notification.toasty('Senhas não batem')
-    }
-}
