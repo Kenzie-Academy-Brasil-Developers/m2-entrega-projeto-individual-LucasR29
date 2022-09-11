@@ -20,22 +20,6 @@
     font-family: var(--monserrat);
 }
 
-#filterCompanies:hover{
-    -webkit-appearance: none;
-    background-image: url('../assets/chevron-down-outline.svg');
-    background-repeat: no-repeat;
-    background-position: 100%;
-    background-size: 14px;
-}
-
-#filterCompanies:focus{
-    -webkit-appearance: none;
-    background-image: url('../assets/chevron-up-outline.svg');
-    background-repeat: no-repeat;
-    background-position: 100%;
-    background-size: 14px;
-}
-
 #selectDepartment{
     height: 35px;
     width: 200px;
@@ -47,13 +31,23 @@
     -webkit-appearance: none;
     border-radius: 5px;
     padding: 0px 5px;
+    color: var(--li-color);
+    font-size: 16px;
 }
 
-#selectDepartment{
+#noDepartment{
+    -webkit-appearance: none;
+    height: 35px;
+    background-color: rgba(39, 39, 39, 0.674);
+    text-align: center;
+    border-radius: 5px;
+    padding: 0px 5px;
+    font-size: 18px;
+    font-family: var(--monserrat);
     color: var(--li-color);
 }
 
-#selectDepartment:hover{
+.selectStyle:hover{
     -webkit-appearance: none;
     background-image: url('../assets/chevron-down-outline.svg');
     background-repeat: no-repeat;
@@ -61,7 +55,7 @@
     background-size: 14px;
 }
 
-#selectDepartment:focus{
+.selectStyle:focus{
     -webkit-appearance: none;
     background-image: url('../assets/chevron-up-outline.svg');
     background-repeat: no-repeat;
@@ -86,7 +80,21 @@
 }
 
 #description{
-    font-size: 14px;
+    font-size: 12px;
+}
+
+.userWorkInfo{
+    height: 100%;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttonsEditWorker{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 @media (max-width: 550px){

@@ -20,7 +20,6 @@
         </nav>
     </header>
 
-
     <main>
         <section class="list-companies">
             <ul id="company">
@@ -41,8 +40,8 @@
                     <p class="companyInfo__name">Nenhuma empresa selecionada</p>
                     <span id="companyInfo__hours">Abre às: 00:00</span>
                     <div class="buttonsDepartment">
-                        <button id="createDepartment">Criar Dep.</button>
-                        <button id="deleteDepartment">Excluir Dep.</button>
+                        <button id="openCreateDepartment" value="2">Criar Dep.</button>
+                        <button id="openDeleteDepartment"  value="2">Excluir Dep.</button>
                     </div>
 
                 </li>
@@ -62,8 +61,8 @@
             <button id="closeButton">X</button>
         </div>
         <ul>
-            <li id="editInfo">Cadastrar empresa</li>
-            <li><select id="filterCompanies">
+            <li id="createCompany">Cadastrar empresa</li>
+            <li><select id="filterCompanies" class="selectStyle">
                 <option value="" id="1">Setor: Todos</option>
             </select></li>
         </ul>
@@ -71,52 +70,71 @@
             
         </ul>
         <button id="logout">Sair</button>
-        <button>Usuários sem departamento</button>
+        <button id="buttonUsersNoDepartment">Usuários sem departamento</button>
     </aside>
 
 
     <section class="modal-background" id="modalAttInfo">
         <div class="modal">
             <div class="modal-header">
-                <h2>Informe os dados da empresa</h2>
+                <h2 id="modalTitle">Informe os dados da empresa</h2>
                 <button id="closeModal">X</button>
             </div>
-            <form action="" id="formCreateCompanie" class="forms">
+
+            <form id="formCreateCompany" class="forms">
                 <input type="text" class="newCompanyInfo" placeholder="Nome da empresa">
                 <input type="text" class="newCompanyInfo" placeholder="Horário de abertura">
                 <input type="text" class="newCompanyInfo" placeholder="Slogan">
                 <div class="select">
                     <span>Selecione o setor:</span>
-                    <select class="newCompanyInfo" id="sectorSelect">
+                    <select class="newCompanyInfo" id="sectorSelect" class="selectStyle">
                     </select>
                 </div>
                 <button type="submit" id="buttonCreateCompany">Criar empresa</button>
             </form>
 
-            <form action="" id="editDepartment" class="forms">
+            <form id="editDepartment" class="forms">
                 <input type="text" placeholder="Descrição do departamento" id="newDepartmentDescription">
                 <button id="attDepartment">Atualizar</button>
             </form>
 
-            <form action="" id="deleteDepartment" class="forms">
+            <form id="formDeleteDepartment" class="forms">
                 <h2></h2>
-                <button id="delDepartment">Deletar</button>
+                <button id="deleteDepartment">Deletar</button>
             </form>
 
-            <form action="" id="createDepartment" class="forms">
-
+            <form id="formCreateDepartment" class="forms">
+                <input type="text" placeholder="Nome do departamento" id="name_department">
+                <input type="text" placeholder="Descrição do departamento" id="description_department">
+                <button id="createDepartment">Criar</button>
             </form>
 
-            <form action="" id="hireWorker" class="forms">
-                <select name="" id=""></select>
+            <form id="hireWorker" class="forms">
+                <select id="noDepartment" class="selectStyle"></select>
+                <button id="buttonHire">Contratar</button>
+            </form>
+
+            <form id="editUserInfo" class="forms">
+                <input type="text" placeholder="Modalidade de trabalho" id="kindOfWork">
+                <input type="text" placeholder="Nível profissional" id="professionalLevel">
+                <button id="attUserInfo">Atualizar</button>
+            </form>
+
+            <form action="" id="formDismissWorker" class="forms">
+                <button id="dismissWorker">Demitir</button>
+            </form>
+
+            <form action="" id="formDeleteUser" class="forms">
+                <button id="deleteUser">Deletar</button>
             </form>
         </div>
     </section>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script type="module" src="../JS/eventListenersDashboard.js"></script>
+
     <script type="module" src="../JS/createCompany.js"></script>
     <script type="module" src="../JS/dashboardAdmin.js"></script>
     <script type="module" src="../JS/eventListenersAdmin.js"></script>
+    <script type="module" src="../JS/usersWithoutDepartment.js"></script>
 </body>
 </html>
