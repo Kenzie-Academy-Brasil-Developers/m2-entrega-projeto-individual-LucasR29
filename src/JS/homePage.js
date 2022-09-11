@@ -26,7 +26,7 @@ function showAll(){
 }
 
 async function renderCompanies(){
-    const data = await Api.getCompanies()
+    const data = await Api.getCompaniesHome()
     data.data.forEach(x => {
         sectors.add(x.sectors.description)
 

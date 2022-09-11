@@ -71,8 +71,12 @@ class Api{
         })
     }
 
-    static async getCompany(){
-        return await instance.get('')
+    static async getCompaniesHome(){
+        return await instance.get('/companies')
+    }
+
+    static async getAllCompanies(){
+        return await instance.get('departments')
     }
 
     static async getDepartments(){
@@ -82,11 +86,37 @@ class Api{
         })
     }
 
-    static async getCompanies(){
-        return await instance.get('companies')
-        // .then(res => console.log(res))
-        // .catch(err => console.log(err))
+    static async editDepartments(data, uuid){
+        return await instance.patch(`/departments/${uuid}`, data)
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
     }
+
+    static async getSectors(){
+        return await instance.get('/sectors')
+        .then(res => res)
+        .catch(err => console.log(err))
+    }
+
+    static async createCompany(data){
+        return await instance.post('/companies', data)
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+    }
+
+    static async getCompanyDepartments(companyUUID){
+        return await instance.get(`/departments/${companyUUID}`)
+        .then(res => res)
+        .catch(err => console.log(err))
+    }
+
+    static async getWorkers(){
+        return await instance.get('/users')
+        .then(res => res)
+        .catch(err => console.log(err))
+    }
+
+
 }
 
 export {Api}

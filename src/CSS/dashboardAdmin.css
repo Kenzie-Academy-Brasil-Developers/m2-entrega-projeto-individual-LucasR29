@@ -1,0 +1,97 @@
+.select{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.select select{
+    height: 40px;
+    border-radius: 5px;
+}
+
+#filterCompanies{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(168, 168, 168);
+    text-align: center;
+    color: var(--header-color);
+    font-size: 20px;
+    font-family: var(--monserrat);
+}
+
+#filterCompanies:hover{
+    -webkit-appearance: none;
+    background-image: url('../assets/chevron-down-outline.svg');
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-size: 14px;
+}
+
+#filterCompanies:focus{
+    -webkit-appearance: none;
+    background-image: url('../assets/chevron-up-outline.svg');
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-size: 14px;
+}
+
+#selectDepartment{
+    height: 35px;
+    width: 200px;
+    background-color: rgba(39, 39, 39, 0.674);
+    text-align: center;
+    color: var(--header-color);
+    font-size: 20px;
+    font-family: var(--monserrat);
+    -webkit-appearance: none;
+    border-radius: 5px;
+    padding: 0px 5px;
+}
+
+#selectDepartment{
+    color: var(--li-color);
+}
+
+#selectDepartment:hover{
+    -webkit-appearance: none;
+    background-image: url('../assets/chevron-down-outline.svg');
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-size: 14px;
+}
+
+#selectDepartment:focus{
+    -webkit-appearance: none;
+    background-image: url('../assets/chevron-up-outline.svg');
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-size: 14px;
+}
+
+#company h2{
+    font-family: var(--montserrat);
+    font-size: 22px;
+}
+
+#companyInfo{
+    background-color: rgba(39, 39, 39, 0.891);
+    color: var(--li-color);
+}
+
+.buttonsDepartment{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#description{
+    font-size: 14px;
+}
+
+@media (max-width: 550px){
+    .fixedLI{
+        flex-direction: column;
+        min-height: 150px;
+    }
+}

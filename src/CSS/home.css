@@ -16,12 +16,13 @@ main{
     display: flex;
     justify-content: center;
     width: 100%;
+    margin-bottom: 10px;
 }
 
 .list-companies ul{
     display: flex;
     flex-direction: column;
-    width: 55%;
+    width: 59%;
     gap: 10px;
 }
 
@@ -46,13 +47,16 @@ aside{
     gap: 20px;
     right: 0;
     top: 0;
-    padding-top: 55px;
+    padding-top: 40px;
+    padding-bottom: 2vh;
     background-color: #242423;
-    height: calc(100%);
+    height: calc(100vh - 2vh - 40px);
     width: 20%;
     z-index: 3;
     transform: translateX(100%);
     transition: all 0.3s ease-in;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 aside ul{
@@ -60,7 +64,6 @@ aside ul{
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    
 }
 
 aside ul li{
@@ -81,7 +84,7 @@ aside ul li:hover{
 
 #close-menu-button{
     position: relative;
-    top: -45px;
+    top: -30px;
     right: -85%;
 }
 
@@ -99,7 +102,7 @@ aside ul li:hover{
     width: 150px;
 }
 
-@media(max-width: 822px){
+@media(max-width: 900px){
     .list-companies ul{
         width: 90%;
     }
