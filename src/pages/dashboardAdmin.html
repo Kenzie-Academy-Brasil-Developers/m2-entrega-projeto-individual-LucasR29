@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/confgButtons&Geral.css">
+    <link rel="stylesheet" href="../CSS/home.css">
+    <link rel="stylesheet" href="../CSS/modalHomePage.css">
+    <link rel="stylesheet" href="../CSS/dashboardNormal.css">
+    <link rel="stylesheet" href="../CSS/dashboardAdmin.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <title>dashboard normal user</title>
+</head>
+<body class="preload" id="body">
+    <header>
+        <nav>
+            <h1>Empresas e Departamentos</h1>
+            <button id="showSideBar">Menu</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="list-companies">
+            <ul id="company">
+                <li class="fixedLI">
+                    <h2>Departamentos:</h2>
+                    <div>
+                        <select id="selectDepartment">
+                            <option value="" id="2">Todos</option>
+                        </select>
+                        <span id="description"></span>
+                    </div>
+                    <div class="buttonsDepartment">
+                        <button id="hire" value="2">Contratar</button>
+                        <button id="edit" value="2">Editar</button>
+                    </div>
+                </li>
+                <li id="companyInfo" class="fixedLI">
+                    <p class="companyInfo__name">Nenhuma empresa selecionada</p>
+                    <span id="companyInfo__hours">Abre às: 00:00</span>
+                    <div class="buttonsDepartment">
+                        <button id="openCreateDepartment" value="2">Criar Dep.</button>
+                        <button id="openDeleteDepartment"  value="2">Excluir Dep.</button>
+                    </div>
+
+                </li>
+            </ul>
+        </section>
+        <section class="list-companies">
+            <ul id="workers">
+                
+            </ul>
+
+        </section>
+    </main>
+
+    
+    <aside id="sideBar">
+        <div id="close-menu-button">
+            <button id="closeButton">X</button>
+        </div>
+        <ul>
+            <li id="createCompany">Cadastrar empresa</li>
+            <li><select id="filterCompanies" class="selectStyle">
+                <option value="" id="1">Setor: Todos</option>
+            </select></li>
+        </ul>
+        <ul id="menu">
+            
+        </ul>
+        <button id="logout">Sair</button>
+        <button id="buttonUsersNoDepartment">Usuários sem departamento</button>
+    </aside>
+
+
+    <section class="modal-background" id="modalAttInfo">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="modalTitle">Informe os dados da empresa</h2>
+                <button id="closeModal">X</button>
+            </div>
+
+            <form id="formCreateCompany" class="forms">
+                <input type="text" class="newCompanyInfo" placeholder="Nome da empresa">
+                <input type="text" class="newCompanyInfo" placeholder="Horário de abertura">
+                <input type="text" class="newCompanyInfo" placeholder="Slogan">
+                <div class="select">
+                    <span>Selecione o setor:</span>
+                    <select class="newCompanyInfo" id="sectorSelect" class="selectStyle">
+                    </select>
+                </div>
+                <button type="submit" id="buttonCreateCompany">Criar empresa</button>
+            </form>
+
+            <form id="editDepartment" class="forms">
+                <input type="text" placeholder="Descrição do departamento" id="newDepartmentDescription">
+                <button id="attDepartment">Atualizar</button>
+            </form>
+
+            <form id="formDeleteDepartment" class="forms">
+                <h2></h2>
+                <button id="deleteDepartment">Deletar</button>
+            </form>
+
+            <form id="formCreateDepartment" class="forms">
+                <input type="text" placeholder="Nome do departamento" id="name_department">
+                <input type="text" placeholder="Descrição do departamento" id="description_department">
+                <button id="createDepartment">Criar</button>
+            </form>
+
+            <form id="hireWorker" class="forms">
+                <select id="noDepartment" class="selectStyle"></select>
+                <button id="buttonHire">Contratar</button>
+            </form>
+
+            <form id="editUserInfo" class="forms">
+                <input type="text" placeholder="Modalidade de trabalho" id="kindOfWork">
+                <input type="text" placeholder="Nível profissional" id="professionalLevel">
+                <button id="attUserInfo">Atualizar</button>
+            </form>
+
+            <form action="" id="formDismissWorker" class="forms">
+                <button id="dismissWorker">Demitir</button>
+            </form>
+
+            <form action="" id="formDeleteUser" class="forms">
+                <button id="deleteUser">Deletar</button>
+            </form>
+        </div>
+    </section>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script type="module" src="../JS/createCompany.js"></script>
+    <script type="module" src="../JS/dashboardAdmin.js"></script>
+    <script type="module" src="../JS/eventListenersAdmin.js"></script>
+    <script type="module" src="../JS/usersWithoutDepartment.js"></script>
+</body>
+</html>

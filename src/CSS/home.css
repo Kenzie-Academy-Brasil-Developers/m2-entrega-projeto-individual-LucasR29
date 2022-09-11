@@ -1,0 +1,152 @@
+main{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    padding-top: 80px;
+
+}
+
+#buttonsHeaderLogin{
+    position: relative;
+    right: 64px;
+}
+
+.list-companies{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.list-companies ul{
+    display: flex;
+    flex-direction: column;
+    width: 59%;
+    gap: 10px;
+}
+
+.list-companies ul li{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 19px;
+    font-weight: 400;
+    background-color: var(--li-color);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+aside{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    right: 0;
+    top: 0;
+    padding-top: 40px;
+    padding-bottom: 2vh;
+    background-color: #242423;
+    height: calc(100vh - 2vh - 40px);
+    width: 20%;
+    z-index: 3;
+    transform: translateX(100%);
+    transition: all 0.3s ease-in;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+aside ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+aside ul li{
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-size: 22px;
+    color: var(--li-color);
+    background-color: rgb(39, 39, 39);
+}
+
+aside ul li:hover{
+    cursor: pointer;
+}
+
+#close-menu-button{
+    position: relative;
+    top: -30px;
+    right: -85%;
+}
+
+.login-cad-button-mobile{
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 16px;
+    width: 100%;
+}
+
+.login-cad-button-mobile button{
+    height: 32px;
+    width: 150px;
+}
+
+@media(max-width: 900px){
+    .list-companies ul{
+        width: 90%;
+    }
+    aside{
+        width: 100%;
+    }
+    .login-cad-button-mobile button{
+        width: 300px;
+    }
+}
+
+@media(max-width:1000px){
+    .hideOnMobile{
+        display: none;
+    }
+    .login-cad-button-mobile{
+        display: flex;
+    }
+    aside ul li{
+        height: 50px;
+    }
+}
+
+
+@media(min-width:800px) and (max-width: 1000px){
+    .list-companies ul{
+        width: 58%;
+    }
+    #close-menu-button{
+        right: -80%;
+    }
+    
+}
+
+@media(max-width:450px){
+    h1{
+        font-size: 20px;
+    }
+}
+
+.showSideBar{
+    transform: translateX(0%);
+}
+
+.hide{
+    display: none;
+}
