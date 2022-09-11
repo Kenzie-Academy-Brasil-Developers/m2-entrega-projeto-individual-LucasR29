@@ -40,7 +40,7 @@ function createListHeader(departments, workers){
     const companyDescriptionElement = document.createElement('li')
     companyDescriptionElement.id = 'description'
     const companyDescription = document.createElement('span')
-    companyDescription.innerText = `Funcionários ${workers.data[0].name} ${departments.name}`
+    companyDescription.innerText = `Funcionários ${workers.data[0].name} ${departments.data.name}`
 
     companyDescriptionElement.appendChild(companyDescription)
 
@@ -75,6 +75,8 @@ function renderCompanyWorkers(worker, department){
     const listDepartments = document.getElementById('listDepartments')
     const listWorkers = document.getElementById('listWorkers')
 
+    console.log(workers)
+    console.log(departments)
     createCompanyWorkers(workers,departments)
 
     listDepartments.addEventListener('click', (event) => {
