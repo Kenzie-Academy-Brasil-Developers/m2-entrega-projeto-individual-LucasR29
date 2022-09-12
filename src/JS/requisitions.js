@@ -14,10 +14,10 @@ const instance = axios.create({
 
 class Api{
     static async login(data){
-        console.log(data)
+        
         return await instance.post('/auth/login', data)
         .then(res => {
-            console.log(res)
+            
             localStorage.setItem('userToken', res.data.token)
             localStorage.setItem('userUUID', res.data.uuid)
             if(res.data.is_admin === false){
@@ -35,7 +35,7 @@ class Api{
     static async createUser(data){
         return await instance.post('/auth/register/user', data)
         .then(res => {
-            console.log(res)
+            
             if(res.status >= 200 && res.status <= 203){
                 Notification.toasty('Usuário criado com sucesso', 'green')
                 const obj = {
@@ -55,7 +55,7 @@ class Api{
     }
 
     static async patchUser(data){
-        console.log(data)
+        
         return await instance.patch('/users', data)
         .then(res => {
             Notification.toasty('Usuário atualizado com sucesso', 'green')
@@ -194,13 +194,19 @@ class Api{
     static async hire(data){
         return await instance.patch('/departments/hire', data)
         .then(res => res)
-        .catch(err => console.log(err))
+        .then( Notification.toasty('Contratado com sucesso', 'green'))
+        .catch(err => {
+            Notification.toasty(err.response.data.error, 'red')
+        })
     }
 
     static async delete(uuid){
         return await instance.delete(`/admin/delete_user/${uuid}`)
-        .then(res => console.log(res))
-        .catch(err => console.log(err))
+        .then(res => res)
+        .then( Notification.toasty('Usuário deletado', 'green'))
+        .catch(err => {
+            Notification.toasty(err.response.data.error, 'red')
+        })
     }
 }
 

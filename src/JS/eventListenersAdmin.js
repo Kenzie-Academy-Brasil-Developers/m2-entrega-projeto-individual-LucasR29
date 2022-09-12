@@ -80,7 +80,7 @@ async function createDepartment(){
         company_uuid: openCreate.value
     }
     const data = await Api.createDepartment(obj)
-    console.log(data)
+    modal.style.display = 'none'
     const depOption = document.createElement('option')
     depOption.innerText = data.data.name//NOME DEPARTAMENTO
     depOption.id = data.data.uuid //ID DO DEPARTAMENTO
@@ -131,6 +131,7 @@ async function deletarDepartamento(){
 deleteDepartment.addEventListener(('click'), async (event) => {
     event.preventDefault()
     await deletarDepartamento()
+    window.location.reload()
 })
 
 /*--------------------Att user info---------------------------------------------*/
@@ -160,42 +161,65 @@ buttonAttUserInfo.addEventListener('click', async (event) => {
 })
 
 /*--------------------Demitir Funcionário----------------------------------------*/
-
+const validation = new Set
 const buttonDismiss = document.getElementById('dismissWorker')
+const listWorkers = document.getElementById('workers')
+let n = 1
 
 buttonDismiss.addEventListener('click', async (event) => {
     event.preventDefault()
+
     await Api.dismiss(buttonDismiss.value)
-    const erase = document.getElementsByClassName(buttonDismiss.value)
     
-    erase[0].style.display = 'none'
+    const uuid = buttonDismiss.value
+
+    const erase = document.getElementsByClassName(uuid)
+   // const index = teste.indexOf(buttonDismiss.value)
+
+    validation.delete(uuid)
+
+    //teste.splice(index, 1)
+
+    // if(erase.length > 1){
+    //     erase[n].style.display = 'none'
+    //     n++
+    // }else{
+    listWorkers.removeChild(erase[0])
+    
     modal.style.display = 'none'
 })
 
 /*--------------------Contratar Funcionário--------------------------------------*/
 
 const openHire = document.getElementById('hire')
-const selectHire = document.getElementById('noDepartment')
 const buttonHire = document.getElementById('buttonHire')
+const selectHire = document.getElementById('noDepartment')
+
 
 async function renderHireOptions(){
     const data = await Api.noDepartment()
 
+    console.log(validation)
+
     data.data.forEach(x => {
-        const option = document.createElement('option')
-        option.id = x.uuid
-        const name = document.createElement('span')
-        name.innerText = x.username + ' - '
-        const profLevel = document.createElement('span')
-
-        if(x.professional_level == null || x.professional_level.length < 3){
-            profLevel.innerText = 'Desconhecido'
-        }else{
-            profLevel.innerText = x.professional_level
+        if(!validation.has(x.uuid)){
+            const option = document.createElement('option')
+            option.id = x.uuid
+            const name = document.createElement('span')
+            name.innerText = x.username + ' - '
+            const profLevel = document.createElement('span')
+    
+            if(x.professional_level == null || x.professional_level.length < 3){
+                profLevel.innerText = 'Desconhecido'
+            }else{
+                profLevel.innerText = x.professional_level
+            }
+    
+            option.append(name, profLevel)
+            selectHire.appendChild(option)
+            //teste.push(x.uuid)
+            validation.add(x.uuid)
         }
-
-        option.append(name, profLevel)
-        selectHire.appendChild(option)
     })
 }
 
@@ -220,15 +244,17 @@ openHire.addEventListener('click', async (event) => {
 
 buttonHire.addEventListener('click', async (event) => {
     event.preventDefault()
-
+    const uuid = selectHire.options[selectHire.selectedIndex].id
     const obj = {
-        user_uuid: selectHire.options[selectHire.selectedIndex].id,
+        user_uuid: uuid,
         department_uuid: openHire.value
     }
 
-    selectHire.options[selectHire.selectedIndex].style.display = 'none'
-    selectHire.options[selectHire.selectedIndex].text = ''
+    selectHire.remove(selectHire.selectedIndex)
+
     const data = await Api.hire(obj)
+    
+    modal.style.display = 'none'
 
     creatingWorker(data.data)
 })
