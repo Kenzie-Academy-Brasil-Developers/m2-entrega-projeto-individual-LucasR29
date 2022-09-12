@@ -24,12 +24,12 @@ buttonCadastrar.addEventListener('click', async (event) => {
 
 buttonLogin.addEventListener('click', async (event) => {
     event.preventDefault()
-    console.log(userInfoLogin)
+    
     const obj = {
         email: userInfoLogin[0].value,
         password: userInfoLogin[1].value
     }
-    console.log(obj)
+    
     await Api.login(obj)
 })
 

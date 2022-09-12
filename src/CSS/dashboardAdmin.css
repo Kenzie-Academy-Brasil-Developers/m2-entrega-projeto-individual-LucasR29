@@ -1,3 +1,9 @@
+:root{
+    --gray-dark: rgba(39, 39, 39, 0.674);
+    --gray-darker: rgba(39, 39, 39, 0.826);
+    --gray-light: rgba(65, 65, 65, 0.826);
+}
+
 .select{
     display: flex;
     width: 100%;
@@ -23,7 +29,7 @@
 #selectDepartment{
     height: 35px;
     width: 200px;
-    background-color: rgba(39, 39, 39, 0.674);
+    background-color: var(--gray-dark);
     text-align: center;
     color: var(--header-color);
     font-size: 20px;
@@ -38,7 +44,7 @@
 #noDepartment{
     -webkit-appearance: none;
     height: 35px;
-    background-color: rgba(39, 39, 39, 0.674);
+    background-color: var(--gray-dark);
     text-align: center;
     border-radius: 5px;
     padding: 0px 5px;
@@ -69,7 +75,7 @@
 }
 
 #companyInfo{
-    background-color: rgba(39, 39, 39, 0.891);
+    background-color: rgba(39, 39, 39, 0.826);
     color: var(--li-color);
 }
 
@@ -102,4 +108,32 @@
         flex-direction: column;
         min-height: 150px;
     }
+}
+
+aside::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+}
+  
+aside::-webkit-scrollbar-track {
+    background: var(--gray-light);        /* color of the tracking area */
+}
+  
+aside::-webkit-scrollbar-thumb {
+    background-color: var(--gray-dark);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 2px solid var(--gray-light);  /* creates padding around scroll thumb */
+}
+
+body::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+}
+    
+body::-webkit-scrollbar-track {
+    background: var(--gray-darker);        /* color of the tracking area */
+}
+    
+body::-webkit-scrollbar-thumb {
+    background-color: var(--gray-dark);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid var(--gray-light);   /* creates padding around scroll thumb */
 }
