@@ -39,6 +39,7 @@ async function editDepartment(){
     }
     const data = await Api.editDepartments(obj, buttonEdit.value)
     depdescription.innerText = data.data.description
+    newDescription.value = ''
     modal.style.display = 'none'
 }
 
@@ -172,20 +173,11 @@ buttonDismiss.addEventListener('click', async (event) => {
     await Api.dismiss(buttonDismiss.value)
     
     const uuid = buttonDismiss.value
-
-    const erase = document.getElementsByClassName(uuid)
-   // const index = teste.indexOf(buttonDismiss.value)
-
     validation.delete(uuid)
 
-    //teste.splice(index, 1)
-
-    // if(erase.length > 1){
-    //     erase[n].style.display = 'none'
-    //     n++
-    // }else{
+    const erase = document.getElementsByClassName(uuid)
     listWorkers.removeChild(erase[0])
-    
+
     modal.style.display = 'none'
 })
 
@@ -198,8 +190,6 @@ const selectHire = document.getElementById('noDepartment')
 
 async function renderHireOptions(){
     const data = await Api.noDepartment()
-
-    console.log(validation)
 
     data.data.forEach(x => {
         if(!validation.has(x.uuid)){
